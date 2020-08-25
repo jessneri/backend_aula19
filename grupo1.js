@@ -14,10 +14,11 @@ const banco = {
     745: "Banco Citibank S.A."
 }
 
-const caracter = "840-35";
+const caracter = "190.012.840-35";
 
 const cpf = "19001284035";
-
+const agencia = "12345";
+const conta = "1234563"
 
 
 
@@ -36,6 +37,16 @@ const formatarCPF = (cpf) => {
     const numero = `${cpf.substr(0, 3)}.${cpf.substr(3, 3)}.${cpf.substr(6, 3)}-${cpf.substr(9, 2)}`
 
     return numero;
+};
+
+const formatarAgencia = (agencia) => {
+    const numeroAgencia = `${agencia.substr(0, 4)}-${agencia.substr(4, 1)}`;
+    return numeroAgencia;
 }
 
-console.log(formatarCPF(cpf));
+const formatarConta = (conta) => {
+    const numeroConta = `${conta.substr(0, 6)}-${conta.substr(6, 1)}`;
+    return numeroConta;
+}
+
+console.log(formatarConta(conta));
