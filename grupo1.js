@@ -14,10 +14,28 @@ const banco = {
     745: "Banco Citibank S.A."
 }
 
+const caracter = "840-35";
+
+const cpf = "19001284035";
+
+
+
+
 
 const nomeDoBanco = (codigo) => {
     const nome = banco[codigo].replace("S.A.", "").replace("(antigo)", "").replace("(Brasil)", "").replace("Holding", "");
     return nome;
 };
 
-console.log(nomeDoBanco(001));
+const removeCaracter = (caracter) => {
+    const numeros = caracter.replace("-", "").replace(".", "").replace(".", "");
+    return numeros
+}
+
+const formatarCPF = (cpf) => {
+    const numero = `${cpf.substr(0, 3)}.${cpf.substr(3, 3)}.${cpf.substr(6, 3)}-${cpf.substr(9, 2)}`
+
+    return numero;
+}
+
+console.log(formatarCPF(cpf));
